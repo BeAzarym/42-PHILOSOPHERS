@@ -6,16 +6,16 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 14:02:46 by cchabeau          #+#    #+#             */
-/*   Updated: 2024/01/03 12:42:17 by cchabeau         ###   ########.fr       */
+/*   Updated: 2024/01/24 12:59:48 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philosophers.h"
 
-int check_arg(int argc, char** argv)
+int	check_arg(int argc, char **argv)
 {
-	int i;
-	long tmp;
+	int		i;
+	long	tmp;
 
 	i = 1;
 	while (i < argc)

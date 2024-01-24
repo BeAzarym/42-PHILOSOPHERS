@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 12:20:08 by cchabeau          #+#    #+#             */
-/*   Updated: 2024/01/24 11:45:21 by cchabeau         ###   ########.fr       */
+/*   Updated: 2024/01/24 13:07:31 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,11 @@ t_philosophers			*init_philosophers(t_settings *settings);
 uint64_t				get_time(void);
 void					ft_usleep(uint64_t time);
 void					print(t_settings *settings, int pos);
-void					eat(t_settings *settings, int pos);
+void					eat(t_settings *set, int pos);
 void					*routine(void *v_pointer);
-void					death_checking(t_settings *settings);
+void					death_checking(t_settings *set);
 void					sated_checking(t_settings *settings);
 void					clean_all(t_settings *settings);
+void					start_dineer(t_settings *set);
 
 #endif

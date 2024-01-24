@@ -6,28 +6,28 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 09:31:09 by cchabeau          #+#    #+#             */
-/*   Updated: 2024/01/24 12:34:03 by cchabeau         ###   ########.fr       */
+/*   Updated: 2024/01/24 13:03:48 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philosophers.h"
 
-void	death_checking(t_settings *settings)
+void	death_checking(t_settings *set)
 {
 	int	i;
 
-	while (!settings->sated)
+	while (!set->sated)
 	{
 		i = -1;
-		while (++i < settings->nb_philo)
+		while (++i < set->nb_philo)
 		{
 			if ((get_time()
-					- settings->philosophers[i].last_meal) > settings->time_to_die
-				&& settings->philosophers[i].status != EAT)
+					- set->philosophers[i].last_meal) > set->time_to_die
+				&& set->philosophers[i].status != EAT)
 			{
-				settings->philosophers[i].status = DIED;
-				print(settings, i);
-				settings->is_alive = 0;
+				set->philosophers[i].status = DIED;
+				print(set, i);
+				set->is_alive = 0;
 				break ;
 			}
 			usleep(100);

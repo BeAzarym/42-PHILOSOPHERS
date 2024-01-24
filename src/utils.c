@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 14:05:14 by cchabeau          #+#    #+#             */
-/*   Updated: 2024/01/24 09:14:51 by cchabeau         ###   ########.fr       */
+/*   Updated: 2024/01/24 13:04:39 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,12 @@ uint64_t	get_time(void)
 	gettimeofday(&time, NULL);
 	return ((time.tv_sec * (uint64_t)1000) + (time.tv_usec / 1000));
 }
+
 void	ft_usleep(uint64_t time)
 {
-	uint64_t start;
+	uint64_t	start;
+
 	start = get_time();
-	while((get_time() - start) < time)
+	while ((get_time() - start) < time)
 		usleep(500);
 }
