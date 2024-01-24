@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 14:05:14 by cchabeau          #+#    #+#             */
-/*   Updated: 2024/01/24 13:04:39 by cchabeau         ###   ########.fr       */
+/*   Updated: 2024/01/24 14:01:11 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,21 @@ void	ft_usleep(uint64_t time)
 	start = get_time();
 	while ((get_time() - start) < time)
 		usleep(500);
+}
+
+int	ft_isnumber(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] >= 48 && str[i] <= 57)
+			i++;
+		else
+		{
+			return (1);
+		}
+	}
+	return (0);
 }

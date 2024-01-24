@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 14:18:27 by cchabeau          #+#    #+#             */
-/*   Updated: 2024/01/24 13:08:09 by cchabeau         ###   ########.fr       */
+/*   Updated: 2024/01/24 13:58:28 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,18 +101,19 @@ void	*routine(void *v_pointer)
 	return (0);
 }
 
-void	start_dineer(t_settings *set)
+int	start_dineer(t_settings *set)
 {
 	int	i;
 
 	i = 0;
-	settings->start = get_time();
-	while (i < settings->nb_philo)
+	set->start = get_time();
+	while (i < set->nb_philo)
 	{
-		settings->philosophers[i].last_meal = get_time();
-		if (pthread_create(&(settings->philosophers[i].id), NULL, routine,
-				&(settings->philosophers[i])))
+		set->philosophers[i].last_meal = get_time();
+		if (pthread_create(&(set->philosophers[i].id), NULL, routine,
+				&(set->philosophers[i])))
 			return (i);
 		i++;
 	}
+	return (0);
 }

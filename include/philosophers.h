@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 12:20:08 by cchabeau          #+#    #+#             */
-/*   Updated: 2024/01/24 13:07:31 by cchabeau         ###   ########.fr       */
+/*   Updated: 2024/01/24 14:00:01 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void					*routine(void *v_pointer);
 void					death_checking(t_settings *set);
 void					sated_checking(t_settings *settings);
 void					clean_all(t_settings *settings);
-void					start_dineer(t_settings *set);
+int						start_dineer(t_settings *set);
+int						ft_isnumber(char *str);
 
 #endif

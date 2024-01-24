@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 09:31:09 by cchabeau          #+#    #+#             */
-/*   Updated: 2024/01/24 13:03:48 by cchabeau         ###   ########.fr       */
+/*   Updated: 2024/01/24 13:58:41 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	death_checking(t_settings *set)
 			}
 			usleep(100);
 		}
-		if (settings->is_alive == 0)
+		if (set->is_alive == 0)
 			break ;
-		sated_checking(settings);
+		sated_checking(set);
 	}
 }
 
