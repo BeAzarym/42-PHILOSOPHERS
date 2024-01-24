@@ -28,7 +28,7 @@ RM = @rm -rf
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-	$(CC) -lpthread$(CLFAGS) -I $(INC_DIR) -o $(NAME) $(OBJS) 
+	$(CC) -lpthread -fsanitize=thread -g3 $(CLFAGS) -I $(INC_DIR) -o $(NAME) $(OBJS) 
 
 clean:
 	$(RM) $(OBJS)

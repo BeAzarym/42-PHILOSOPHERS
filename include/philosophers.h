@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 12:20:08 by cchabeau          #+#    #+#             */
-/*   Updated: 2024/01/24 14:00:01 by cchabeau         ###   ########.fr       */
+/*   Updated: 2024/01/24 14:32:38 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ typedef struct s_settings
 
 long int				ft_atoi(const char *str);
 int						check_arg(int argc, char **argv);
-int						ft_error(char *error_code);
+int						ft_error(char *error_code, t_settings *settings);
 t_settings				*init_settings(int argc, char **argv);
 int						init_mutex(t_settings *settings);
 t_philosophers			*init_philosophers(t_settings *settings);
@@ -87,5 +87,6 @@ void					sated_checking(t_settings *settings);
 void					clean_all(t_settings *settings);
 int						start_dineer(t_settings *set);
 int						ft_isnumber(char *str);
+void					clean_fail(t_settings *settings, int check);
 
 #endif
