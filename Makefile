@@ -2,8 +2,12 @@ NAME	=	philo
 
 SRC =	main.c \
 		parser.c \
-		libft_utils.c \
+		utils.c \
 		error.c \
+		init.c \
+		eat.c \
+		print.c \
+		end_condition.c \
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC))
 
@@ -24,7 +28,7 @@ RM = @rm -rf
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-	$(CC) $(CLFAGS) -I $(INC_DIR) -o $(NAME) $(OBJS) 
+	$(CC) -lpthread$(CLFAGS) -I $(INC_DIR) -o $(NAME) $(OBJS) 
 
 clean:
 	$(RM) $(OBJS)

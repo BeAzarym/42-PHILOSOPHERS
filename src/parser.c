@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 14:02:46 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/10/18 14:11:28 by cchabeau         ###   ########.fr       */
+/*   Updated: 2024/01/03 12:42:17 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ int check_arg(int argc, char** argv)
 	while (i < argc)
 	{
 		tmp = ft_atoi(argv[i]);
-		if (tmp < INT_MIN || tmp > INT_MAX)
-			return (-1);
-		printf("%ld \n", tmp);
+		if ((tmp < INT_MIN || tmp > INT_MAX) || tmp <= 0)
+			return (0);
 		i++;
 	}
 	return (1);
